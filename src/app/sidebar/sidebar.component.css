@@ -25,10 +25,19 @@ body {
 
 .moduleActive {
     background-color: #ff3d3d40;
-    color: white;
+}
+
+a {
+    padding-bottom: 0px;
 }
 
 img {
     width: 74%;
+    transition: transform 0.3s;
+    position: relative;
     margin-left: 15%;
+}
+
+img:hover {
+    transform: scale(1.2);
 }
