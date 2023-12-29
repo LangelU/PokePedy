@@ -1,7 +1,140 @@
 .pokemon {
-    border: 10px solid black;
     position: relative;
     margin-left: 120px;
     margin-right: 20px;
     margin-top: -490px;
+}
+
+.pokemonContent {
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 5px;
+}
+
+.pokemonContent h6 {
+    font-size: 18px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.card {
+    width: 180px;
+    height: 250px;
+    margin: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 5px solid #5bb858;
+    background-color: #067c068e;
+}
+
+.card img {
+    width: 90%;
+    display: flex;
+    transform: 0.3s;
+    margin-left: 7%;
+    border-radius: 4px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.card .artWork:hover {
+    transform: scale(1.2);
+}
+
+.card p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.twoTypes {
+    display: flex;
+    margin-top: -10px;
+}
+
+.twoTypes img {
+    width: 81px;
+    margin: 2px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: -1px;
+}
+
+.oneType {
+    margin-left: 20%;
+}
+
+.oneType img {
+    width: 81px;
+    height: auto;
+    display: flex;
+    margin-top: 0px;
+}
+
+.noNumber {
+    visibility: hidden;
+    opacity: 0;
+}
+.pokemonName {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemonShortName h2 {
+    font-size: 1.2em;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+.pokemonName h2 {
+    font-size: 1.0em !important;
+    text-transform: capitalize;
+}
+
+a {
+    text-decoration: none;
+}
+
+.filtersContent {
+    border: 2px solid #ececec;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+}
+
+.filter {
+    text-transform: capitalize;
+}
+
+.formContent {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+}
+
+.formContent .filter {
+    width: 29%;
+    margin-left: 10px;
+}
+
+.btn {
+    margin-left: 10px;
+    width: 15%;
+    background-color: #1e8ef8d7;
+}
+
+.btn:hover {
+    background-color: #2751c7;
 }

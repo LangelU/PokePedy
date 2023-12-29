@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PokemonService {
-  public pokemonList: any[] = [
+  public pokemonArray: any[] = [
     {
       "number": 1,
       "name": "bulbasaur",
@@ -422,6 +422,14 @@ export class PokemonService {
       }
     },
     {
+      "number": 10161,
+      "name": "meowth-galar",
+      "types": {
+        "first_type": "steel",
+        "second_type": null
+      }
+    },
+    {
       "number": 53,
       "name": "persian",
       "types": {
@@ -622,11 +630,27 @@ export class PokemonService {
       }
     },
     {
+      "number": 10162,
+      "name": "ponyta-galar",
+      "types": {
+        "first_type": "psychic",
+        "second_type": null
+      }
+    },
+    {
       "number": 78,
       "name": "rapidash",
       "types": {
         "first_type": "fire",
         "second_type": null
+      }
+    },
+    {
+      "number": 10163,
+      "name": "rapidash-galar",
+      "types": {
+        "first_type": "psychic",
+        "second_type": "fairy"
       }
     },
     {
@@ -638,10 +662,26 @@ export class PokemonService {
       }
     },
     {
+      "number": 10164,
+      "name": "slowpoke-galar",
+      "types": {
+        "first_type": "psychic",
+        "second_type": null
+      }
+    },
+    {
       "number": 80,
       "name": "slowbro",
       "types": {
         "first_type": "water",
+        "second_type": "psychic"
+      }
+    },
+    {
+      "number": 10165,
+      "name": "slowbro-galar",
+      "types": {
+        "first_type": "poison",
         "second_type": "psychic"
       }
     },
@@ -667,6 +707,14 @@ export class PokemonService {
       "types": {
         "first_type": "normal",
         "second_type": "flying"
+      }
+    },
+    {
+      "number": 10166,
+      "name": "farfetchd-galar",
+      "types": {
+        "first_type": "fighting",
+        "second_type": null
       }
     },
     {
@@ -886,6 +934,14 @@ export class PokemonService {
       }
     },
     {
+      "number": 10167,
+      "name": "weezing-galar",
+      "types": {
+        "first_type": "poison",
+        "second_type": "fairy"
+      }
+    },
+    {
       "number": 111,
       "name": "rhyhorn",
       "types": {
@@ -979,6 +1035,14 @@ export class PokemonService {
       "types": {
         "first_type": "psychic",
         "second_type": "fairy"
+      }
+    },
+    {
+      "number": 10168,
+      "name": "mr-mime-galar",
+      "types": {
+        "first_type": "ice",
+        "second_type": "psychic"
       }
     },
     {
@@ -1158,6 +1222,14 @@ export class PokemonService {
       }
     },
     {
+      "number": 10169,
+      "name": "articuno-galar",
+      "types": {
+        "first_type": "psychic",
+        "second_type": "flying"
+      }
+    },
+    {
       "number": 145,
       "name": "zapdos",
       "types": {
@@ -1166,10 +1238,26 @@ export class PokemonService {
       }
     },
     {
+      "number": 10170,
+      "name": "zapdos-galar",
+      "types": {
+        "first_type": "fighting",
+        "second_type": "flying"
+      }
+    },
+    {
       "number": 146,
       "name": "moltres",
       "types": {
         "first_type": "fire",
+        "second_type": "flying"
+      }
+    },
+    {
+      "number": 10171,
+      "name": "moltres-galar",
+      "types": {
+        "first_type": "dark",
         "second_type": "flying"
       }
     },
@@ -1598,6 +1686,14 @@ export class PokemonService {
       }
     },
     {
+      "number": 10172,
+      "name": "slowking-galar",
+      "types": {
+        "first_type": "poison",
+        "second_type": "psychic"
+      }
+    },
+    {
       "number": 200,
       "name": "misdreavus",
       "types": {
@@ -1779,6 +1875,14 @@ export class PokemonService {
       "types": {
         "first_type": "water",
         "second_type": "rock"
+      }
+    },
+    {
+      "number": 10173,
+      "name": "corsola-galar",
+      "types": {
+        "first_type": "ghost",
+        "second_type": null
       }
     },
     {
@@ -2110,11 +2214,27 @@ export class PokemonService {
       }
     },
     {
+      "number": 10174,
+      "name": "zigzagoon-galar",
+      "types": {
+        "first_type": "dark",
+        "second_type": "normal"
+      }
+    },
+    {
       "number": 264,
       "name": "linoone",
       "types": {
         "first_type": "normal",
         "second_type": null
+      }
+    },
+    {
+      "number": 10175,
+      "name": "linoone-galar",
+      "types": {
+        "first_type": "dark",
+        "second_type": "normal"
       }
     },
     {
@@ -5966,8 +6086,32 @@ export class PokemonService {
       }
     },
     {
+      "number": 10126,
+      "name": "lycanroc-midnight",
+      "types": {
+        "first_type": "rock",
+        "second_type": null
+      }
+    },
+    {
+      "number": 10152,
+      "name": "lycanroc-dusk",
+      "types": {
+        "first_type": "rock",
+        "second_type": null
+      }
+    },
+    {
       "number": 746,
       "name": "wishiwashi-solo",
+      "types": {
+        "first_type": "water",
+        "second_type": null
+      }
+    },
+    {
+      "number": 10127,
+      "name": "wishiwashi-school",
       "types": {
         "first_type": "water",
         "second_type": null
@@ -6198,6 +6342,14 @@ export class PokemonService {
       }
     },
     {
+      "number": 10136,
+      "name": "minior-red",
+      "types": {
+        "first_type": "rock",
+        "second_type": "flying"
+      }
+    },
+    {
       "number": 775,
       "name": "komala",
       "types": {
@@ -6403,6 +6555,30 @@ export class PokemonService {
       "types": {
         "first_type": "psychic",
         "second_type": null
+      }
+    },
+    {
+      "number": 10155,
+      "name": "necrozma-dusk",
+      "types": {
+        "first_type": "psychic",
+        "second_type": "steel"
+      }
+    },
+    {
+      "number": 10156,
+      "name": "necrozma-dawn",
+      "types": {
+        "first_type": "psychic",
+        "second_type": "ghost"
+      }
+    },
+    {
+      "number": 10157,
+      "name": "necrozma-ultra",
+      "types": {
+        "first_type": "psychic",
+        "second_type": "dragon"
       }
     },
     {
@@ -8182,30 +8358,6 @@ export class PokemonService {
       }
     },
     {
-      "number": 1023,
-      "name": "iron-crown",
-      "types": {
-        "first_type": "steel",
-        "second_type": "psychic"
-      }
-    },
-    {
-      "number": 1024,
-      "name": "terapagos",
-      "types": {
-        "first_type": "normal",
-        "second_type": null
-      }
-    },
-    {
-      "number": 1025,
-      "name": "pecharunt",
-      "types": {
-        "first_type": "poison",
-        "second_type": "ghost"
-      }
-    },
-    {
       "number": 10001,
       "name": "deoxys-attack",
       "types": {
@@ -8838,54 +8990,6 @@ export class PokemonService {
       }
     },
     {
-      "number": 10080,
-      "name": "pikachu-rock-star",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10081,
-      "name": "pikachu-belle",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10082,
-      "name": "pikachu-pop-star",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10083,
-      "name": "pikachu-phd",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10084,
-      "name": "pikachu-libre",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10085,
-      "name": "pikachu-cosplay",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
       "number": 10086,
       "name": "hoopa-unbound",
       "types": {
@@ -8939,62 +9043,6 @@ export class PokemonService {
       "types": {
         "first_type": "dark",
         "second_type": "normal"
-      }
-    },
-    {
-      "number": 10093,
-      "name": "raticate-totem-alola",
-      "types": {
-        "first_type": "dark",
-        "second_type": "normal"
-      }
-    },
-    {
-      "number": 10094,
-      "name": "pikachu-original-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10095,
-      "name": "pikachu-hoenn-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10096,
-      "name": "pikachu-sinnoh-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10097,
-      "name": "pikachu-unova-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10098,
-      "name": "pikachu-kalos-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10099,
-      "name": "pikachu-alola-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
       }
     },
     {
@@ -9126,22 +9174,6 @@ export class PokemonService {
       }
     },
     {
-      "number": 10116,
-      "name": "greninja-battle-bond",
-      "types": {
-        "first_type": "water",
-        "second_type": "dark"
-      }
-    },
-    {
-      "number": 10117,
-      "name": "greninja-ash",
-      "types": {
-        "first_type": "water",
-        "second_type": "dark"
-      }
-    },
-    {
       "number": 10118,
       "name": "zygarde-10-power-construct",
       "types": {
@@ -9166,22 +9198,6 @@ export class PokemonService {
       }
     },
     {
-      "number": 10121,
-      "name": "gumshoos-totem",
-      "types": {
-        "first_type": "normal",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10122,
-      "name": "vikavolt-totem",
-      "types": {
-        "first_type": "bug",
-        "second_type": "electric"
-      }
-    },
-    {
       "number": 10123,
       "name": "oricorio-pom-pom",
       "types": {
@@ -9203,406 +9219,6 @@ export class PokemonService {
       "types": {
         "first_type": "ghost",
         "second_type": "flying"
-      }
-    },
-    {
-      "number": 10126,
-      "name": "lycanroc-midnight",
-      "types": {
-        "first_type": "rock",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10127,
-      "name": "wishiwashi-school",
-      "types": {
-        "first_type": "water",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10128,
-      "name": "lurantis-totem",
-      "types": {
-        "first_type": "grass",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10129,
-      "name": "salazzle-totem",
-      "types": {
-        "first_type": "poison",
-        "second_type": "fire"
-      }
-    },
-    {
-      "number": 10130,
-      "name": "minior-orange-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10131,
-      "name": "minior-yellow-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10132,
-      "name": "minior-green-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10133,
-      "name": "minior-blue-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10134,
-      "name": "minior-indigo-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10135,
-      "name": "minior-violet-meteor",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10136,
-      "name": "minior-red",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10137,
-      "name": "minior-orange",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10138,
-      "name": "minior-yellow",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10139,
-      "name": "minior-green",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10140,
-      "name": "minior-blue",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10141,
-      "name": "minior-indigo",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10142,
-      "name": "minior-violet",
-      "types": {
-        "first_type": "rock",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10143,
-      "name": "mimikyu-busted",
-      "types": {
-        "first_type": "ghost",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10144,
-      "name": "mimikyu-totem-disguised",
-      "types": {
-        "first_type": "ghost",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10145,
-      "name": "mimikyu-totem-busted",
-      "types": {
-        "first_type": "ghost",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10146,
-      "name": "kommo-o-totem",
-      "types": {
-        "first_type": "dragon",
-        "second_type": "fighting"
-      }
-    },
-    {
-      "number": 10147,
-      "name": "magearna-original",
-      "types": {
-        "first_type": "steel",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10148,
-      "name": "pikachu-partner-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10149,
-      "name": "marowak-totem",
-      "types": {
-        "first_type": "fire",
-        "second_type": "ghost"
-      }
-    },
-    {
-      "number": 10150,
-      "name": "ribombee-totem",
-      "types": {
-        "first_type": "bug",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10151,
-      "name": "rockruff-own-tempo",
-      "types": {
-        "first_type": "rock",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10152,
-      "name": "lycanroc-dusk",
-      "types": {
-        "first_type": "rock",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10153,
-      "name": "araquanid-totem",
-      "types": {
-        "first_type": "water",
-        "second_type": "bug"
-      }
-    },
-    {
-      "number": 10154,
-      "name": "togedemaru-totem",
-      "types": {
-        "first_type": "electric",
-        "second_type": "steel"
-      }
-    },
-    {
-      "number": 10155,
-      "name": "necrozma-dusk",
-      "types": {
-        "first_type": "psychic",
-        "second_type": "steel"
-      }
-    },
-    {
-      "number": 10156,
-      "name": "necrozma-dawn",
-      "types": {
-        "first_type": "psychic",
-        "second_type": "ghost"
-      }
-    },
-    {
-      "number": 10157,
-      "name": "necrozma-ultra",
-      "types": {
-        "first_type": "psychic",
-        "second_type": "dragon"
-      }
-    },
-    {
-      "number": 10158,
-      "name": "pikachu-starter",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10159,
-      "name": "eevee-starter",
-      "types": {
-        "first_type": "normal",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10160,
-      "name": "pikachu-world-cap",
-      "types": {
-        "first_type": "electric",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10161,
-      "name": "meowth-galar",
-      "types": {
-        "first_type": "steel",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10162,
-      "name": "ponyta-galar",
-      "types": {
-        "first_type": "psychic",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10163,
-      "name": "rapidash-galar",
-      "types": {
-        "first_type": "psychic",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10164,
-      "name": "slowpoke-galar",
-      "types": {
-        "first_type": "psychic",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10165,
-      "name": "slowbro-galar",
-      "types": {
-        "first_type": "poison",
-        "second_type": "psychic"
-      }
-    },
-    {
-      "number": 10166,
-      "name": "farfetchd-galar",
-      "types": {
-        "first_type": "fighting",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10167,
-      "name": "weezing-galar",
-      "types": {
-        "first_type": "poison",
-        "second_type": "fairy"
-      }
-    },
-    {
-      "number": 10168,
-      "name": "mr-mime-galar",
-      "types": {
-        "first_type": "ice",
-        "second_type": "psychic"
-      }
-    },
-    {
-      "number": 10169,
-      "name": "articuno-galar",
-      "types": {
-        "first_type": "psychic",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10170,
-      "name": "zapdos-galar",
-      "types": {
-        "first_type": "fighting",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10171,
-      "name": "moltres-galar",
-      "types": {
-        "first_type": "dark",
-        "second_type": "flying"
-      }
-    },
-    {
-      "number": 10172,
-      "name": "slowking-galar",
-      "types": {
-        "first_type": "poison",
-        "second_type": "psychic"
-      }
-    },
-    {
-      "number": 10173,
-      "name": "corsola-galar",
-      "types": {
-        "first_type": "ghost",
-        "second_type": null
-      }
-    },
-    {
-      "number": 10174,
-      "name": "zigzagoon-galar",
-      "types": {
-        "first_type": "dark",
-        "second_type": "normal"
-      }
-    },
-    {
-      "number": 10175,
-      "name": "linoone-galar",
-      "types": {
-        "first_type": "dark",
-        "second_type": "normal"
       }
     }
   ];

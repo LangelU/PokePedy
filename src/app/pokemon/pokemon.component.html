@@ -1,9 +1,52 @@
 <div class="pokemon">
+    <h1>Pokémon</h1>
     <div class="filtersContent">
-        <h5>Filters here</h5>
+       <h5>Filters</h5>
+       <div class="formContent">
+           <select name="type_one" id="type_one" class="form-control filter" [(ngModel)]="typeOne" (change)="onChangeTypeOne()">
+            <option value="all" selected disabled>Select one type</option>
+            <option *ngFor="let type of typesList" value="{{ type.name }}">{{ type.name }}</option>
+           </select>
+           <select name="type_two" id="type_two" class="form-control filter" [(ngModel)]="typeTwo" (change)="onChangeTypeTwo()">
+            <option value="all" selected disabled>Select one type</option>
+            <option *ngFor="let type of typesList" value="{{ type.name }}">{{ type.name }}</option>
+           </select>
+           <input class="form-control filter" type="text" placeholder="Find Pokemon..." [(ngModel)]="searchText" (input)="filterByName()">
+           <button type="button" class="btn btn-primary" (click)="resetFilters()">Reset</button>
+       </div>
     </div>
 
-    <div class="pokemonContent">
-        <h5>Pokemon here</h5>
+    <div *ngIf="filterResults; else noMatches" class="pokemonContent">
+        <div *ngFor="let pokemon of pokemonList" class="card" [ngStyle]="typeColor[pokemon.types.first_type]">
+            <div class="number" *ngIf="!pokemon.name.includes('-'); else noNumber">
+                <h6>#{{ pokemon.number }}</h6>
+            </div>
+            <ng-template #noNumber>
+                <div class="noNumber">
+                    <h6>a </h6>
+                </div>
+            </ng-template>
+            <a href="#">
+                <img class="artWork" [src]="artUrl + pokemon.number + '.png'" (error)="resourceNotAvailable($event)">
+            </a>
+            <div [ngClass]="{'pokemonName' : pokemon.name.includes('-'), 'pokemonShortName' : !pokemon.name.includes('-')}">
+                <h2>{{ pokemon.name }}</h2>
+            </div>
+            <div *ngIf="pokemon.types.second_type; else uniqueType">
+                <div class="twoTypes">
+                    <img src="assets/img/typeIcons/{{ pokemon.types.first_type }}.png">
+                    <img src="assets/img/typeIcons/{{ pokemon.types.second_type }}.png">
+                </div>
+            </div>
+            <ng-template #uniqueType>
+                <div class="oneType">
+                    <img src="assets/img/typeIcons/{{ pokemon.types.first_type }}.png">
+                </div>
+            </ng-template>
+        </div>
     </div>
+
+    <ng-template #noMatches>
+        <h1>No se econtraron restuldados</h1>
+    </ng-template>
 </div>

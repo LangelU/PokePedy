@@ -9,6 +9,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonService } from './services/pokemon.service';
+import { ApiService } from './services/api/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { PokemonService } from './services/pokemon.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
-    PokemonService
+    PokemonService,
+    ApiService
   ],
   bootstrap: [AppComponent]
 })
