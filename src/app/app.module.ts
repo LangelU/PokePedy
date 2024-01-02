@@ -13,6 +13,8 @@ import { ApiService } from './services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerService } from './services/spinner/spinner.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BannerComponent,
     SidebarComponent,
     FooterComponent,
-    PokemonComponent
+    PokemonComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   providers: [
     PokemonService,
-    ApiService
+    ApiService,
+    SpinnerService
   ],
   bootstrap: [AppComponent]
 })

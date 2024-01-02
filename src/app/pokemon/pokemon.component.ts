@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 import { ApiService } from '../services/api/api.service';
+import { SpinnerService } from '../services/spinner/spinner.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -8,15 +9,14 @@ import { ApiService } from '../services/api/api.service';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  pokemonArray: any[] = [];
   artUrl: any;
   typesList: any;
   pokemonList: any;
   searchText = '';
+  filterResults = true;
   typeOne: string = 'all';
   typeTwo: string = 'all';
-  filteredElements: any[] = this.pokemonArray;
-  filterResults = true;
+  pokemonArray: any[] = [];
   typeColor: any = {
     'normal': {'border': '5px solid #c4c2c2', 'background-color': '#bbb9b98e'},
     'grass': {'border': '5px solid #5bb858', 'background-color': '#067c068e'},
@@ -37,11 +37,16 @@ export class PokemonComponent implements OnInit {
     'dragon': {'border': '5px solid #8983e9', 'background-color': '#1900ff8e'},
     'rock': {'border': '5px solid #9e7942', 'background-color': '#411f008e'}
   };
+  pokemonContent = { 'display': 'none' }
   alreadyFiltered = false;
-  
+  showContent: boolean = false;
+  filteredElements: any[] = this.pokemonArray;
+  filteredElements2: any[] = this.pokemonArray;
+
   constructor(
     private pokemon: PokemonService,
-    private api: ApiService
+    private api: ApiService,
+    public spinner: SpinnerService
     
   ) {
     this.artUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"
@@ -49,6 +54,7 @@ export class PokemonComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.activateSpinner();
     this.initialicepokemonArray();
     this.getTypes();
   }
@@ -83,32 +89,40 @@ export class PokemonComponent implements OnInit {
 
 
   filterByName() {
+    var searchParameter;
     if (this.typeOne === 'all' && this.typeTwo === 'all') {
-      this.pokemonList = this.pokemonArray.filter((pokemon: any) =>
-        pokemon.name.toLowerCase().includes(this.searchText.toLowerCase())
-      );
+      searchParameter = this.pokemonArray;
     } else {
-      this.pokemonList = this.filteredElements.filter((pokemon: any) =>
-        pokemon.name.toLowerCase().includes(this.searchText.toLowerCase())
-      );
+      searchParameter = this.filteredElements;
     }
+    
+    this.filteredElements2 = searchParameter.filter((pokemon: any) =>
+      pokemon.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+    this.pokemonList = this.filteredElements2;
     this.updateFilterResults();
   }
   
   filterByType() {
+    var searchParameter;
+    if (this.searchText === '') {
+      searchParameter = this.pokemonArray;
+    } else {
+      searchParameter = this.pokemonList;
+    }
     if (this.typeOne === this.typeTwo) {
-      this.filteredElements = this.pokemonArray.filter((pokemon: any) => {
+      this.filteredElements = searchParameter.filter((pokemon: any) => {
         const oneTypeCondition = this.typeOne === 'all' || (pokemon.types && (pokemon.types.second_type === null && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo)));
         return oneTypeCondition;
       });
     } else {
-      this.filteredElements = this.pokemonArray.filter((pokemon: any) => {
+      this.filteredElements = searchParameter.filter((pokemon: any) => {
         const firstTypeCondicion = this.typeOne === 'all' || (pokemon.types && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo));
         const secondTypeCondicion = this.typeTwo === 'all' || (pokemon.types && (pokemon.types.second_type === this.typeTwo || pokemon.types.second_type === this.typeOne));
         return firstTypeCondicion && secondTypeCondicion;
       });
     }
-    this.pokemonList = this.filteredElements
+    this.pokemonList = this.filteredElements;
     this.updateFilterResults();
   }
   
@@ -118,10 +132,25 @@ export class PokemonComponent implements OnInit {
   }
 
   resetFilters() {
+    this.pokemonContent = {
+      'display' : 'none'
+    }
+    this.activateSpinner();
     this.typeOne = 'all';
     this.typeTwo = 'all';
     this.searchText = '';
     this.pokemonList = this.pokemonArray;
+  }
+  
+  activateSpinner() {
+    this.spinner.show();
+
+    setTimeout(() => {
+      this.spinner.hide();
+      this.pokemonContent = {
+        'display' : 'block'
+      }
+    }, 2000);
   }
   
 }

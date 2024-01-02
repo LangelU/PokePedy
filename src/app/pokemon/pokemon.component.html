@@ -1,5 +1,13 @@
-<div class="pokemon">
-    <h1>Pokémon</h1>
+<div *ngIf="spinner.showSpinner$ | async">
+    <app-spinner></app-spinner>
+</div>
+<div class="pokemon" [ngStyle]="pokemonContent">
+    <div class="titleContent">
+        <h1>Pokémon</h1>
+        <a routerLink="">
+            <i class="fa fa-home" aria-hidden="true" title="Go home"></i>
+        </a>
+    </div>
     <div class="filtersContent">
        <h5>Filters</h5>
        <div class="formContent">
@@ -47,6 +55,9 @@
     </div>
 
     <ng-template #noMatches>
-        <h1>No se econtraron restuldados</h1>
+        <div class="noMatchesContent">
+            <img src="assets/img/noMatches.png">
+            <h4>No matches found</h4>
+        </div>
     </ng-template>
 </div>

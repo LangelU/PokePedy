@@ -138,3 +138,45 @@ a {
 .btn:hover {
     background-color: #2751c7;
 }
+
+.noMatchesContent {
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+}
+
+.noMatchesContent img {
+    max-width: 100%;
+    width: 200px;
+}
+
+.noMatchesContent h4 {
+    margin-top: 10px;
+}
+
+.titleContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.titleContent h1 {
+    display: flex;
+    margin: 0;
+}
+
+.titleContent i {
+    display: flex;
+    font-size: 40px;
+    color: #ff6969;
+}
+
+.titleContent i:hover {
+    display: flex;
+    font-size: 40px;
+    color: #ff4545;
+}
