@@ -19,7 +19,7 @@
             <option value="all" selected disabled>Select one type</option>
             <option *ngFor="let type of typesList" value="{{ type.name }}">{{ type.name }}</option>
            </select>
-           <input class="form-control filter" type="text" placeholder="Find Pokemon..." [(ngModel)]="searchText" (input)="filterByName()">
+           <input class="form-control filter" type="text" placeholder="Find Pokemon..." [(ngModel)]="searchText" (input)="applyFilters()">
            <button type="button" class="btn btn-primary" (click)="resetFilters()">Reset</button>
        </div>
     </div>
@@ -34,7 +34,7 @@
                     <h6>a </h6>
                 </div>
             </ng-template>
-            <a href="#">
+            <a [routerLink]="['details', pokemon.name]">
                 <img class="artWork" [src]="artUrl + pokemon.number + '.png'" (error)="resourceNotAvailable($event)">
             </a>
             <div [ngClass]="{'pokemonName' : pokemon.name.includes('-'), 'pokemonShortName' : !pokemon.name.includes('-')}">

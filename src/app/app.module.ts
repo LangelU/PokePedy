@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './services/spinner/spinner.service';
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SpinnerService } from './services/spinner/spinner.service';
     SidebarComponent,
     FooterComponent,
     PokemonComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,

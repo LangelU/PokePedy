@@ -69,11 +69,11 @@ export class PokemonComponent implements OnInit {
   }
 
   onChangeTypeOne(){
-    this.filterByType();
+    this.applyFilters();
   }
 
   onChangeTypeTwo(){
-    this.filterByType();
+    this.applyFilters();
   }
 
   getTypes() {
@@ -87,44 +87,32 @@ export class PokemonComponent implements OnInit {
     );
   } 
 
-
-  filterByName() {
-    var searchParameter;
-    if (this.typeOne === 'all' && this.typeTwo === 'all') {
-      searchParameter = this.pokemonArray;
+  applyFilters() {
+    if (this.typeOne === 'all' && this.typeTwo === 'all' && this.searchText === '') {
+      this.pokemonList = this.pokemonArray;
     } else {
-      searchParameter = this.filteredElements;
+      let searchParameter = this.pokemonArray;
+      if (this.searchText !== '') {
+        searchParameter = searchParameter.filter((pokemon: any) =>
+          pokemon.name.toLowerCase().includes(this.searchText.toLowerCase())
+        );
+      }
+      if (this.typeOne === this.typeTwo) {
+        this.pokemonList = searchParameter.filter((pokemon: any) => {
+          const oneTypeCondition = this.typeOne === 'all' || (pokemon.types && (pokemon.types.second_type === null && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo)));
+          return oneTypeCondition;
+        });
+      } else {
+        this.pokemonList = searchParameter.filter((pokemon: any) => {
+          const firstTypeCondition = this.typeOne === 'all' || (pokemon.types && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo));
+          const secondTypeCondition = this.typeTwo === 'all' || (pokemon.types && (pokemon.types.second_type === this.typeTwo || pokemon.types.second_type === this.typeOne));
+          return firstTypeCondition && secondTypeCondition;
+        });
+      }
     }
-    
-    this.filteredElements2 = searchParameter.filter((pokemon: any) =>
-      pokemon.name.toLowerCase().includes(this.searchText.toLowerCase())
-    );
-    this.pokemonList = this.filteredElements2;
     this.updateFilterResults();
   }
   
-  filterByType() {
-    var searchParameter;
-    if (this.searchText === '') {
-      searchParameter = this.pokemonArray;
-    } else {
-      searchParameter = this.pokemonList;
-    }
-    if (this.typeOne === this.typeTwo) {
-      this.filteredElements = searchParameter.filter((pokemon: any) => {
-        const oneTypeCondition = this.typeOne === 'all' || (pokemon.types && (pokemon.types.second_type === null && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo)));
-        return oneTypeCondition;
-      });
-    } else {
-      this.filteredElements = searchParameter.filter((pokemon: any) => {
-        const firstTypeCondicion = this.typeOne === 'all' || (pokemon.types && (pokemon.types.first_type === this.typeOne || pokemon.types.first_type === this.typeTwo));
-        const secondTypeCondicion = this.typeTwo === 'all' || (pokemon.types && (pokemon.types.second_type === this.typeTwo || pokemon.types.second_type === this.typeOne));
-        return firstTypeCondicion && secondTypeCondicion;
-      });
-    }
-    this.pokemonList = this.filteredElements;
-    this.updateFilterResults();
-  }
   
   updateFilterResults() {
     const countResults = this.pokemonList.length;
@@ -135,6 +123,7 @@ export class PokemonComponent implements OnInit {
     this.pokemonContent = {
       'display' : 'none'
     }
+    console.log('reseteados');
     this.activateSpinner();
     this.typeOne = 'all';
     this.typeTwo = 'all';

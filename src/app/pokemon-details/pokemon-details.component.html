@@ -1,0 +1,72 @@
+<div *ngIf="spinner.showSpinner$ | async">
+    <app-spinner></app-spinner>
+</div>
+<div class="pokemonDetails" *ngIf="loading" [ngStyle]="pokemonDetails">
+    <div class="titleContent">
+        <h4>{{ titleText }}</h4>
+    </div>
+
+    <div class="pokemonDetailsContent">
+        <div class="navMenuContent" style="overflow-x: auto;" id="navMenuContent" onWheel= "this.scrollLeft+=event.deltaY>0?100:-100">           
+            <ul class="nav nav-pills flex-row flex-nowrap" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-pokemon-tab" data-bs-toggle="pill" data-bs-target="#pills-pokemon" type="button" role="tab" aria-controls="pills-pokemon" aria-selected="true" (click)="setTitle('Pokemon')">Pokemon</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-movements-tab" data-bs-toggle="pill" data-bs-target="#pills-movements" type="button" role="tab" aria-controls="pills-movements" aria-selected="false" (click)="setTitle('Movements')">Movements</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-locations-tab" data-bs-toggle="pill" data-bs-target="#pills-locations" type="button" role="tab" aria-controls="pills-locations" aria-selected="false" (click)="setTitle('Locations')">Locations</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-pokedexEntries-tab" data-bs-toggle="pill" data-bs-target="#pills-pokedexEntries" type="button" role="tab" aria-controls="pills-locations" aria-selected="false" (click)="setTitle('Pokedex Entries')">Pokedex Entries</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-sprites-tab" data-bs-toggle="pill" data-bs-target="#pills-sprites" type="button" role="tab" aria-controls="pills-sprites" aria-selected="false" (click)="setTitle('Sprites')">Sprites</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-evolutionChain-tab" data-bs-toggle="pill" data-bs-target="#pills-evolutionChain" type="button" role="tab" aria-controls="pills-evolutionChain" aria-selected="false" (click)="setTitle('Evolution Chain')">Evolution Chain</button>
+                </li>
+            </ul>
+        </div>
+        
+        
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-pokemon" role="tabpanel" aria-labelledby="pills-pokemon-tab">
+                <div class="pokemonTabContent">
+                    <div class="section pokemonArtWork">
+                        <a (click)="alterArtwork()">
+                            <img *ngIf="isNormalArtwork" src="{{ pokemonData['sprites']['other']['official-artwork']['front_default'] }}" alt="">
+                            <img *ngIf="!isNormalArtwork" src="{{ pokemonData['sprites']['other']['official-artwork']['front_shiny'] }}" alt="">
+                        </a>
+                        <br>
+                        <small class="artText" *ngIf="isNormalArtwork">Normal</small>
+                        <small class="artText" *ngIf="!isNormalArtwork">Shiny</small>
+                    </div>
+                    <div class="section pokemonData">
+                        <label for="">content 2</label>
+                    </div>
+                    <div class="section pokemonStatistics">
+                        <label for="">content 3</label>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-movements" role="tabpanel" aria-labelledby="pills-movements-tab">
+                Movements tab
+            </div>
+            <div class="tab-pane fade" id="pills-locations" role="tabpanel" aria-labelledby="pills-locations-tab">
+                Locations tab
+            </div>
+            <div class="tab-pane fade" id="pills-pokedexEntries" role="tabpanel" aria-labelledby="pills-pokedexEntries-tab">
+                Pokedex entries tab
+            </div>
+            <div class="tab-pane fade" id="pills-sprites" role="tabpanel" aria-labelledby="pills-sprites-tab">
+                Sprites tab
+            </div>
+            <div class="tab-pane fade" id="pills-evolutionChain" role="tabpanel" aria-labelledby="pills-evolutionChain-tab">
+                evolutionChain tab
+            </div>
+        </div>
+    </div>
+</div>
+

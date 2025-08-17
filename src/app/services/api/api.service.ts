@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   pokeApiGetMethod(endpoint: string): Observable<any> {
-    return this.http.get(this.pokeApiUrl + endpoint);
+    return this.http.get<any>(this.pokeApiUrl + endpoint);
   }
   
 }

@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.pokemonDetails {
+    position: relative;
+    margin-left: 120px;
+    margin-right: 20px;
+    margin-top: -490px;
+}
+
+/*Tab menu Styles*/
+.navMenuContent {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: stretch;
+    scrollbar-width: none;
+}
+
+.nav-pills {
+    flex-wrap: nowrap;
+}
+
+.nav-link {
+    max-width: 200px;
+    
+}
+
+/* Color for tabs-text*/
+.nav-pills .nav-link {
+    color: #000000;
+}
+
+.nav-pills .nav-link.active {
+    color: #000000;
+    background-color: #ff3d3d40;
+}
+
+.navMenuContent::-webkit-scrollbar {
+    display: none;
+    max-width: 200px;
+}
+/*? START POKEMON TAB CONTENT STYLES */
+.pokemonTabContent {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    margin-left: -5px;
+}
+
+.section {
+    width: 33%;
+    box-sizing: border-box;
+    border: 2px solid #ecececb6;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 0 50% 0 50%;
+}
+
+@media (min-width: 768px) {
+    .pokemonTabContent {
+        flex-direction: row;
+    }
+
+    .section {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .section {
+        height: 100px;
+        flex: 0 0 100%;
+        width: 96%;
+        margin-top: 10px;
+    }
+}
+
+.pokemonArtWork {
+    position: relative;
+}
+
+.pokemonArtWork img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;  
+}
+
+.artText {
+    position: absolute;
+    bottom: 0;
+    color: #999797;
+}
+
+.pokemonData {
+    
+    
+}
+
+.pokemonStatistics {
+    
+    
+}
+
+.pokemonTabContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*? END POKEMON TAB CONTENT STYLES*/
